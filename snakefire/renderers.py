@@ -8,20 +8,20 @@ from urlparse import urlparse
 
 class MessageRenderer(QtCore.QThread):
     MESSAGES = {
-        "alert": '<div class="alert"><span class="time">[{time}]</span> <span class="author">{user}</span>: {message}</div>',
-        "image": '<span class="upload image"><a href="{url}"><img src="data:image/{type};base64,{data}" title="{name}" {attribs} /></a></span>',
-        "image_url": '<span class="upload image"><a href="{url}"><img src="{url}" title="{name}" {attribs} /></a></span>',
-        "join": '<div class="joined">--&gt; {user} joined {room}</div>',
-        "leave": '<div class="left">&lt;-- {user} has left {room}</div>',
-        "message_self": '<div class="message"><span class="time">[{time}]</span> <span class="author self">{user}</span>: {message}</div>',
-        "no_time_message_self": '<div class="message"><span class="author self">{user}</span>: {message}</div>',
-        "message": '<div class="message"><span class="time">[{time}]</span> <span class="author">{user}</span>: {message}</div>',
-        "no_time_message": '<div class="message"><span class="author">{user}</span>: {message}</div>',
-        "paste": '<div class="paste">{message}</div>',
-        "upload": '<span class="upload"><a href="{url}">{name}</a></span>',
-        "link": '<a href="{url}">{name}</a>',
-        "topic": '<div class="topic">{user} changed topic to <span class="new_topic">{topic}</span></div>',
-        "tweet": '<div class="tweet"><a href="{url_user}">{user}</a> <a href="{url}">tweeted</a>: {message}</div>'
+        u"alert": '<div class="alert"><span class="time">[{time}]</span> <span class="author">{user}</span>: {message}</div>',
+        u"image": '<span class="upload image"><a href="{url}"><img src="data:image/{type};base64,{data}" title="{name}" {attribs} /></a></span>',
+        u"image_url": '<span class="upload image"><a href="{url}"><img src="{url}" title="{name}" {attribs} /></a></span>',
+        u"join": '<div class="joined">--&gt; {user} joined {room}</div>',
+        u"leave": '<div class="left">&lt;-- {user} has left {room}</div>',
+        u"message_self": '<div class="message"><span class="time">[{time}]</span> <span class="author self">{user}</span>: {message}</div>',
+        u"no_time_message_self": '<div class="message"><span class="author self">{user}</span>: {message}</div>',
+        u"message": '<div class="message"><span class="time">[{time}]</span> <span class="author">{user}</span>: {message}</div>',
+        u"no_time_message": '<div class="message"><span class="author">{user}</span>: {message}</div>',
+        u"paste": '<div class="paste">{message}</div>',
+        u"upload": '<span class="upload"><a href="{url}">{name}</a></span>',
+        u"link": '<a href="{url}">{name}</a>',
+        u"topic": '<div class="topic">{user} changed topic to <span class="new_topic">{topic}</span></div>',
+        u"tweet": '<div class="tweet"><a href="{url_user}">{user}</a> <a href="{url}">tweeted</a>: {message}</div>'
     }
 
     def __init__(self, apiToken, maximumImageWidth, room, message, live=True, updateRoom=True, showTimestamps=True, alert=False, alertIsDirectPing=False, parent=None):
